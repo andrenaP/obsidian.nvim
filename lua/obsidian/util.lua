@@ -1125,7 +1125,7 @@ util.get_icon = function(path)
 end
 
 -- We are very loose here because obsidian allows pretty much anything
-util.ANCHOR_LINK_PATTERN = "#[%w%d][^#]*"
+util.ANCHOR_LINK_PATTERN = "#[%w%dА-Яа-яЁё][^#]*"
 
 util.BLOCK_PATTERN = "%^[%w%d][%w%d-]*"
 
