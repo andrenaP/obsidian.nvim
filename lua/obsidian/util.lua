@@ -1238,7 +1238,7 @@ util.standardize_anchor = function(anchor)
   -- Replace whitespace with "-".
   anchor = string.gsub(anchor, "%s", "-")
   -- Remove every non-alphanumeric character.
-  anchor = string.gsub(anchor, "[^#%w_-]", "")
+  anchor = string.gsub(anchor, "[^#%w_-А-Яа-яЁё]", "")
   return anchor
 end
 
