@@ -211,7 +211,14 @@ util.is_audio = function(s)
   return false
 end
 
-
+util.is_video = function(s)
+  for _, suffix in ipairs { ".mp4", ".avi", ".mov", ".wmv", ".mkv", ".webm", ".flv", ".3gp", ".ts" } do
+    if vim.endswith(s, suffix) then
+      return true
+    end
+  end
+  return false
+end
 
 -- This function removes a single backslash within double square brackets
 util.unescape_single_backslash = function(text)
