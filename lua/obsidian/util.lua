@@ -202,6 +202,17 @@ util.is_img = function(s)
   return false
 end
 
+util.is_audio = function(s)
+  for _, suffix in ipairs { ".mp3", ".wav", ".flac", ".aac", ".m4a", ".ogg", ".aiff", ".ac3", ".dts" } do
+    if vim.endswith(s, suffix) then
+      return true
+    end
+  end
+  return false
+end
+
+
+
 -- This function removes a single backslash within double square brackets
 util.unescape_single_backslash = function(text)
   return text:gsub("(%[%[[^\\]+)\\(%|[^\\]+]])", "%1%2")

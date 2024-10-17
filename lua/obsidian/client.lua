@@ -884,6 +884,15 @@ Client.follow_link_async = function(self, link, opts)
         return
       end
 
+      if util.is_audio(res.location) then
+        if self.opts.follow_audio_func ~= nil then
+          self.opts.follow_audio_func(res.location)
+        else
+          log.warn "This looks like an audio path. You can customize the behavior of audio with the 'follow_audio_func' option."
+        end
+        return
+      end
+
       if res.link_type == search.RefTypes.Wiki or res.link_type == search.RefTypes.WikiWithAlias then
         -- Prompt to create a new note.
         if util.confirm("Create new note '" .. res.location .. "'?") then
