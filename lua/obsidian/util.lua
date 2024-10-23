@@ -194,7 +194,7 @@ util.is_url = function(s)
 end
 
 util.is_img = function(s)
-  for _, suffix in ipairs { ".png", ".jpg", ".jpeg", ".heic", ".gif", ".svg", ".ico" } do
+  for _, suffix in ipairs { ".png", ".jpg", ".jpeg", ".heic", ".gif", ".svg", ".ico", ".avif" } do
     if vim.endswith(s, suffix) then
       return true
     end
